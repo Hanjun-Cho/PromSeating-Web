@@ -1,0 +1,74 @@
+.form {
+    width: min(640px, 90vw);
+    background-color: whitesmoke;
+    padding: 20px 20px 0 10px;
+    box-sizing: border-box;
+    text-align: left;
+    height: 100%;
+}
+
+#reservation-form {
+    display: grid;
+    grid-template-areas:
+        "c c"
+        "a b"
+        "d e";
+    place-items: center;
+    grid-gap: 0 30px;
+}
+
+#verification-form {
+    display: grid;
+    place-items: center;
+    text-align: left;
+}
+
+.verification-code-input {
+    padding: 5px 0;
+}
+
+.form-wrapper {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    border-top: 1px solid gray;
+}
+
+#reservation-form > div {
+    width: 100%;
+}
+
+#first-name {
+    grid-area: a;
+}
+
+#last-name {
+    grid-area: b;
+}
+
+#email {
+    grid-area: c;
+}
+
+#wxid {
+    grid-area: d;
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    height: 14px;
+    margin: 3px 0;
+}
+
+.submit-button {
+    width: 100%;
+}
+
+h2 {
+    margin: 0 0 10px 0;
+}
+
+.highlight-error {
+    border: 2px solid lightcoral;
+}

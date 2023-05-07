@@ -1,0 +1,52 @@
+svg {
+    pointer-events: none;
+    transition: all 200ms ease-in-out;
+}
+
+path.table {
+    pointer-events: all;
+}
+
+.table {
+    fill: #000000;
+}
+
+.table:not(.reserved):hover {
+    stroke: aquamarine;
+    stroke-width: 2px;
+}
+
+.circle-table:not(.reserved):hover {
+    stroke: aquamarine;
+    stroke-width: 8px;
+}
+
+.table.reserved {
+    stroke: lightcoral;
+    stroke-width: 3px;
+}
+
+.circle-table.reserved {
+    stroke: lightcoral;
+    stroke-width: 9px;
+}
+
+.wall {
+    fill: none;
+    stroke: #000000;
+    stroke-width: 8px;
+}
+
+.canvas {
+    display: grid;
+    width: 100%;
+    place-items: center;
+    box-shadow: inset 0px 11px 8px -10px #000000,
+    inset 0px -11px 8px -10px #000000;
+    overflow: hidden;
+}
+
+.react-transform-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+}
