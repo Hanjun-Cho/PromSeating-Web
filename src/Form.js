@@ -105,13 +105,14 @@ const Form = ({tableSelected, formStage, handleStageSelected}) => {
                     <form id="verification-form">
                         <div>
                             <label>Enter verification code:</label>
-                            <ReactCodeInput autoFocus={true} fieldWidth="15%" className="verification-code-input"
+                            <ReactCodeInput autoFocus={true} fieldWidth="calc(100% / 6)" 
+                            className="verification-code-input" fieldHeight="56.25px"
                                             onComplete={(val) => {
                                                 checkVerificationCode(val);
                                             }}/>
                         </div>
                     </form>
-                    <p>A 6 digit verification code has been sent to {email}. Didn't receive it?
+                    <p id="verification-note">A 6 digit verification code has been sent to {email}. Didn't receive it?
                         Check
                         your <b>spam folder</b>.</p>
 
@@ -123,9 +124,10 @@ const Form = ({tableSelected, formStage, handleStageSelected}) => {
             <div className="form-wrapper" style={{height: 250}}>
                 <div className="form">
                     <h2>Success!</h2>
-                    <p>You have successfully reserved a seat for DAIS Prom 2023. Details about your reservation will be
-                        sent shortly to your email.<br/><br/>We hope you have a great time at this year's Prom:
-                        Masquerade!</p>
+                    <p id="success-message">You have successfully reserved a seat for DAIS Prom 2023. Details about your reservation will be
+                        sent shortly to your email.</p>
+                    <p id="success-bottom-message">We hope you have a great time at this year's Prom:
+                        <span> Masquerade!</span></p>
                 </div>
             </div>
         );

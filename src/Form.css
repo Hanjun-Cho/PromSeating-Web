@@ -29,7 +29,7 @@
 }
 
 .verification-code-input {
-    padding: 6px 0;
+    padding: 0 0 6px 0;
 }
 
 .form-wrapper {
@@ -40,9 +40,22 @@
     border-top: 1px solid gray;
 }
 
+.form > #verification-note {
+    font-size: 11px;
+    color: rgb(51, 51, 51);
+}
+
 #reservation-form > div {
     width: calc(100% - 9px);
     margin-top: 3px;
+}
+
+#verification-form > div {
+    width: 100%;
+}
+
+.styles_react-code-input__CRulA > input {
+    background-color: rgb(234, 234, 234);
 }
 
 #reservation-form > #form-submit {
@@ -95,4 +108,21 @@ p {
 
 .highlight-error {
     border: 2px solid lightcoral;
+}
+
+label {
+    font-size: 14px;
+}
+
+#success-message {
+    font-size: 14px;
+    margin-bottom: 9px;
+}
+
+#success-bottom-message {
+    font-size: 14px;
+}
+
+#success-bottom-message > span {
+    font-weight: 700;
 }
