@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import useWindowDimensions from "./window";
 import {TransformComponent, TransformWrapper} from "react-zoom-pan-pinch";
+import {toast} from "react-toastify";
 
 const Tables = ({tableSelected, handleTableSelection, formStage}) => {
     useEffect(() => {
@@ -20,11 +21,15 @@ const Tables = ({tableSelected, handleTableSelection, formStage}) => {
 
     async function tableClicked(event, zoomToElement) {
         let table = event.target;
-        if (table.classList.contains('reserved') || formStage !== 0) return;
+        if (table.classList.contains('reserved') || formStage !== 0) {
+            toast.error("table already reserved");
+            return;
+        };
         handleTableSelection(table.id);
         if (tableSelected.length === 0) {
             await new Promise(r => setTimeout(r, 300));
         }
+        console.log(tableSelected);
         zoomToElement(table);
     }
 
@@ -35,7 +40,7 @@ const Tables = ({tableSelected, handleTableSelection, formStage}) => {
                     <TransformComponent>
                         <svg
                             width={width}
-                            height={height - ((tableSelected.length === 0) ? 0 : 250) - 100}
+                            height={height - ((tableSelected.length === 0) ? 0 : 250) - 50}
                             viewBox="0 0 3840 2160"
                             version="1.1"
                             id="SVGRoot"
@@ -918,251 +923,6 @@ const Tables = ({tableSelected, handleTableSelection, formStage}) => {
                                     href="/#"
                                     onClick={(e) => {
                                         tableClicked(e, zoomToElement);
-                                    }} id="g17078">
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 2853.5347,1779.0981 c -0.5724,0 -1.1137,-0.1276 -1.6792,-0.1724 v -44.4784 c 0.5655,-0.045 1.1068,-0.1724 1.6792,-0.1724 12.0608,0 21.8392,10.0335 21.8392,19.3085 0,15.4812 -9.7784,25.5147 -21.8392,25.5147 z"
-                                        id="path3946"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 2853.5347,1706.6914 c -0.5724,0 -1.1137,-0.1276 -1.6792,-0.1724 v -44.4784 c 0.5655,-0.045 1.1068,-0.1724 1.6792,-0.1724 12.0608,0 21.8392,10.0335 21.8392,19.3085 0,15.4812 -9.7784,25.5147 -21.8392,25.5147 z"
-                                        id="path3948"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 2740.1975,1706.519 c -0.5655,0.045 -1.1068,0.1724 -1.6826,0.1724 -12.0575,0 -21.8358,-10.0335 -21.8358,-25.5147 0,-9.275 9.7783,-19.3085 21.8358,-19.3085 0.5758,0 1.1171,0.1276 1.6826,0.1724 z"
-                                        id="path3950"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 2740.1975,1778.9257 c -0.5655,0.045 -1.1068,0.1724 -1.6826,0.1724 -12.0575,0 -21.8358,-10.0335 -21.8358,-25.5147 0,-9.275 9.7783,-19.3085 21.8358,-19.3085 0.5758,0 1.1171,0.1276 1.6826,0.1724 z"
-                                        id="path3952"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        fill="#ffffff"
-                                        d="m 717.5,462.5 h 21 c 1.657,0 3,1.343 3,3 v 42 c 0,1.657 -1.343,3 -3,3 h -21 c -1.657,0 -3,-1.343 -3,-3 v -42 c 0,-1.657 1.343,-3 3,-3 z"
-                                        id="path3954"
-                                        transform="matrix(3.4479383,0,0,3.4479383,285.92736,46.509138)"
-                                        className="table"/>
-                                </a>
-                                <a
-                                    href="/#"
-                                    onClick={(e) => {
-                                        tableClicked(e, zoomToElement);
-                                    }} id="g17120">
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 2856.9826,2034.2455 c -0.5724,0 -1.1137,-0.1275 -1.6792,-0.1724 v -44.4784 c 0.5655,-0.045 1.1068,-0.1724 1.6792,-0.1724 12.0609,0 21.8392,10.0335 21.8392,19.3085 0,15.4812 -9.7783,25.5147 -21.8392,25.5147 z"
-                                        id="path3958"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 2856.9826,1961.8388 c -0.5724,0 -1.1137,-0.1275 -1.6792,-0.1724 v -44.4784 c 0.5655,-0.045 1.1068,-0.1724 1.6792,-0.1724 12.0609,0 21.8392,10.0335 21.8392,19.3085 0,15.4812 -9.7783,25.5147 -21.8392,25.5147 z"
-                                        id="path3960"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 2743.6454,1961.6664 c -0.5654,0.045 -1.1068,0.1724 -1.6826,0.1724 -12.0574,0 -21.8358,-10.0335 -21.8358,-25.5147 0,-9.275 9.7784,-19.3085 21.8358,-19.3085 0.5758,0 1.1172,0.1276 1.6826,0.1724 z"
-                                        id="path3962"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 2743.6454,2034.0731 c -0.5654,0.045 -1.1068,0.1724 -1.6826,0.1724 -12.0574,0 -21.8358,-10.0335 -21.8358,-25.5147 0,-9.275 9.7784,-19.3085 21.8358,-19.3085 0.5758,0 1.1172,0.1276 1.6826,0.1724 z"
-                                        id="path3964"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        fill="#ffffff"
-                                        d="m 718.5,536.5 h 21 c 1.657,0 3,1.343 3,3 v 42 c 0,1.657 -1.343,3 -3,3 h -21 c -1.657,0 -3,-1.343 -3,-3 v -42 c 0,-1.657 1.343,-3 3,-3 z"
-                                        id="path3966"
-                                        transform="matrix(3.4479383,0,0,3.4479383,285.92736,46.509138)"
-                                        className="table"/>
-                                </a>
-                                <a
-                                    href="/#"
-                                    onClick={(e) => {
-                                        tableClicked(e, zoomToElement);
-                                    }} id="g17113">
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 3098.3383,2037.6935 c -0.5724,0 -1.1137,-0.1276 -1.6792,-0.1724 v -44.4784 c 0.5655,-0.045 1.1068,-0.1724 1.6792,-0.1724 12.0609,0 21.8392,10.0335 21.8392,19.3084 0,15.4813 -9.7783,25.5148 -21.8392,25.5148 z"
-                                        id="path3970"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 3098.3383,1965.2868 c -0.5724,0 -1.1137,-0.1276 -1.6792,-0.1724 v -44.4784 c 0.5655,-0.045 1.1068,-0.1724 1.6792,-0.1724 12.0609,0 21.8392,10.0335 21.8392,19.3084 0,15.4813 -9.7783,25.5148 -21.8392,25.5148 z"
-                                        id="path3972"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 2985.0011,1965.1144 c -0.5655,0.045 -1.1068,0.1724 -1.6826,0.1724 -12.0574,0 -21.8358,-10.0335 -21.8358,-25.5148 0,-9.2749 9.7784,-19.3084 21.8358,-19.3084 0.5758,0 1.1171,0.1275 1.6826,0.1724 z"
-                                        id="path3974"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 2985.0011,2037.5211 c -0.5655,0.045 -1.1068,0.1724 -1.6826,0.1724 -12.0574,0 -21.8358,-10.0335 -21.8358,-25.5148 0,-9.2749 9.7784,-19.3084 21.8358,-19.3084 0.5758,0 1.1171,0.1276 1.6826,0.1724 z"
-                                        id="path3976"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        fill="#ffffff"
-                                        d="m 788.5,536.5 h 21 c 1.657,0 3,1.343 3,3 v 42 c 0,1.657 -1.343,3 -3,3 h -21 c -1.657,0 -3,-1.343 -3,-3 v -42 c 0,-1.657 1.343,-3 3,-3 z"
-                                        id="path3978"
-                                        transform="matrix(3.4479383,0,0,3.4479383,285.92736,46.509138)"
-                                        className="table"/>
-                                </a>
-                                <a
-                                    href="/#"
-                                    onClick={(e) => {
-                                        tableClicked(e, zoomToElement);
-                                    }} id="g17106">
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 3319.0063,2030.7976 c -0.5723,0 -1.1137,-0.1276 -1.6791,-0.1724 v -44.4784 c 0.5654,-0.045 1.1068,-0.1724 1.6791,-0.1724 12.0609,0 21.8393,10.0335 21.8393,19.3085 0,15.4812 -9.7784,25.5147 -21.8393,25.5147 z"
-                                        id="path3982"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 3319.0063,1958.3909 c -0.5723,0 -1.1137,-0.1276 -1.6791,-0.1724 v -44.4784 c 0.5654,-0.045 1.1068,-0.1724 1.6791,-0.1724 12.0609,0 21.8393,10.0335 21.8393,19.3084 0,15.4813 -9.7784,25.5148 -21.8393,25.5148 z"
-                                        id="path3984"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 3205.6691,1958.2185 c -0.5654,0.045 -1.1067,0.1724 -1.6825,0.1724 -12.0575,0 -21.8358,-10.0335 -21.8358,-25.5148 0,-9.2749 9.7783,-19.3084 21.8358,-19.3084 0.5758,0 1.1171,0.1276 1.6825,0.1724 z"
-                                        id="path3986"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 3205.6691,2030.6252 c -0.5654,0.045 -1.1067,0.1724 -1.6825,0.1724 -12.0575,0 -21.8358,-10.0335 -21.8358,-25.5147 0,-9.275 9.7783,-19.3085 21.8358,-19.3085 0.5758,0 1.1171,0.1276 1.6825,0.1724 z"
-                                        id="path3988"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        fill="#ffffff"
-                                        d="m 852.5,534.5 h 21 c 1.657,0 3,1.343 3,3 v 42 c 0,1.657 -1.343,3 -3,3 h -21 c -1.657,0 -3,-1.343 -3,-3 v -42 c 0,-1.657 1.343,-3 3,-3 z"
-                                        id="path3990"
-                                        transform="matrix(3.4479383,0,0,3.4479383,285.92736,46.509138)"
-                                        className="table"/>
-                                </a>
-                                <a
-                                    href="/#"
-                                    onClick={(e) => {
-                                        tableClicked(e, zoomToElement);
-                                    }} id="g17085">
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 3322.4543,1775.6502 c -0.5724,0 -1.1137,-0.1276 -1.6792,-0.1724 v -44.4784 c 0.5655,-0.045 1.1068,-0.1724 1.6792,-0.1724 12.0609,0 21.8392,10.0335 21.8392,19.3084 0,15.4813 -9.7783,25.5148 -21.8392,25.5148 z"
-                                        id="path3994"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 3322.4543,1703.2435 c -0.5724,0 -1.1137,-0.1276 -1.6792,-0.1724 v -44.4784 c 0.5655,-0.045 1.1068,-0.1724 1.6792,-0.1724 12.0609,0 21.8392,10.0335 21.8392,19.3084 0,15.4813 -9.7783,25.5148 -21.8392,25.5148 z"
-                                        id="path3996"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 3209.1171,1703.0711 c -0.5655,0.045 -1.1068,0.1724 -1.6826,0.1724 -12.0574,0 -21.8358,-10.0335 -21.8358,-25.5148 0,-9.2749 9.7784,-19.3084 21.8358,-19.3084 0.5758,0 1.1171,0.1275 1.6826,0.1724 z"
-                                        id="path3998"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 3209.1171,1775.4778 c -0.5655,0.045 -1.1068,0.1724 -1.6826,0.1724 -12.0574,0 -21.8358,-10.0335 -21.8358,-25.5148 0,-9.2749 9.7784,-19.3084 21.8358,-19.3084 0.5758,0 1.1171,0.1275 1.6826,0.1724 z"
-                                        id="path4000"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        fill="#ffffff"
-                                        d="m 853.5,460.5 h 21 c 1.657,0 3,1.343 3,3 v 42 c 0,1.657 -1.343,3 -3,3 h -21 c -1.657,0 -3,-1.343 -3,-3 v -42 c 0,-1.657 1.343,-3 3,-3 z"
-                                        id="path4002"
-                                        transform="matrix(3.4479383,0,0,3.4479383,285.92736,46.509138)"
-                                        className="table"/>
-                                </a>
-                                <a
-                                    href="/#"
-                                    onClick={(e) => {
-                                        tableClicked(e, zoomToElement);
                                     }} id="g16877">
                                     <path
                                         fillRule="evenodd"
@@ -1921,200 +1681,6 @@ const Tables = ({tableSelected, handleTableSelection, formStage}) => {
                                     href="/#"
                                     onClick={(e) => {
                                         tableClicked(e, zoomToElement);
-                                    }} id="g17071">
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 2487.2636,1812.5155 c 0.045,0.5655 0.1724,1.1068 0.1724,1.6792 0,12.0609 -10.0335,21.8392 -22.4116,21.8392 -12.3781,0 -22.4116,-9.7783 -22.4116,-21.8392 0,-0.5724 0.1276,-1.1137 0.1724,-1.6792 z"
-                                        id="path4190"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 2559.6703,1812.5155 c 0.045,0.5655 0.1724,1.1068 0.1724,1.6792 0,12.0609 -10.0335,21.8392 -22.4116,21.8392 -12.3781,0 -22.4116,-9.7783 -22.4116,-21.8392 0,-0.5724 0.1276,-1.1137 0.1724,-1.6792 z"
-                                        id="path4192"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 2515.1919,1700.8575 c -0.045,-0.5655 -0.1724,-1.1068 -0.1724,-1.6826 0,-12.0574 10.0335,-21.8358 22.4116,-21.8358 12.3781,0 22.4116,9.7784 22.4116,21.8358 0,0.5758 -0.1276,1.1171 -0.1724,1.6826 z"
-                                        id="path4194"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 2442.7852,1700.8575 c -0.045,-0.5655 -0.1724,-1.1068 -0.1724,-1.6826 0,-12.0574 10.0335,-21.8358 22.4116,-21.8358 12.3781,0 22.4116,9.7784 22.4116,21.8358 0,0.5758 -0.1276,1.1171 -0.1724,1.6826 z"
-                                        id="path4196"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        fill="#ffffff"
-                                        d="m 667.5,485.5 v 21 c 0,1.657 -1.343,3 -3,3 h -42 c -1.657,0 -3,-1.343 -3,-3 v -21 c 0,-1.657 1.343,-3 3,-3 h 42 c 1.657,0 3,1.343 3,3 z"
-                                        id="path4198"
-                                        transform="matrix(3.4479383,0,0,3.4479383,285.92736,46.509138)"
-                                        className="table"/>
-                                </a>
-                                <a
-                                    href="/#"
-                                    onClick={(e) => {
-                                        tableClicked(e, zoomToElement);
-                                    }} id="g17092">
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 3490.6137,1788.38 c 0.045,0.5654 0.1724,1.1067 0.1724,1.6791 0,12.0609 -10.0335,21.8392 -22.4116,21.8392 -12.3781,0 -22.4116,-9.7783 -22.4116,-21.8392 0,-0.5724 0.1275,-1.1137 0.1724,-1.6791 z"
-                                        id="path4202"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 3563.0204,1788.38 c 0.045,0.5654 0.1724,1.1067 0.1724,1.6791 0,12.0609 -10.0335,21.8392 -22.4116,21.8392 -12.3781,0 -22.4116,-9.7783 -22.4116,-21.8392 0,-0.5724 0.1275,-1.1137 0.1724,-1.6791 z"
-                                        id="path4204"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 3518.542,1676.7219 c -0.045,-0.5654 -0.1724,-1.1068 -0.1724,-1.6826 0,-12.0574 10.0335,-21.8358 22.4116,-21.8358 12.3781,0 22.4116,9.7784 22.4116,21.8358 0,0.5758 -0.1276,1.1172 -0.1724,1.6826 z"
-                                        id="path4206"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 3446.1353,1676.7219 c -0.045,-0.5654 -0.1724,-1.1068 -0.1724,-1.6826 0,-12.0574 10.0335,-21.8358 22.4116,-21.8358 12.3781,0 22.4116,9.7784 22.4116,21.8358 0,0.5758 -0.1276,1.1172 -0.1724,1.6826 z"
-                                        id="path4208"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        fill="#ffffff"
-                                        d="m 958.5,478.5 v 21 c 0,1.657 -1.343,3 -3,3 h -42 c -1.657,0 -3,-1.343 -3,-3 v -21 c 0,-1.657 1.343,-3 3,-3 h 42 c 1.657,0 3,1.343 3,3 z"
-                                        id="path4210"
-                                        transform="matrix(3.4479383,0,0,3.4479383,285.92736,46.509138)"
-                                        className="table"/>
-                                </a>
-                                <a
-                                    href="/#"
-                                    onClick={(e) => {
-                                        tableClicked(e, zoomToElement);
-                                    }} id="g17127">
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 2591.9637,1925.0355 -38.5169,-22.2357 c 0.2413,-0.5138 0.4,-1.0447 0.6861,-1.5412 6.0305,-10.4473 19.6085,-13.8952 30.3281,-7.7062 10.7196,6.1891 14.5227,19.6705 8.4923,30.1178 -0.2897,0.4965 -0.6689,0.8999 -0.9896,1.3653 z"
-                                        id="path4214"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 2622.0815,2009.7204 c -4.7927,11.4126 -17.6914,16.8811 -28.811,12.2125 -0.531,-0.2241 -0.9792,-0.5516 -1.4826,-0.8102 l 17.219,-41.0098 c 0.5378,0.1758 1.0861,0.2689 1.6136,0.4896 11.1231,4.6685 16.2501,17.7052 11.461,29.1179 z"
-                                        id="path4216"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 2482.7813,2025.5533 38.1721,22.253 c -0.2413,0.5103 -0.3999,1.0447 -0.6827,1.5412 -5.9752,10.4542 -19.4325,13.9055 -30.0556,7.713 -10.6231,-6.1925 -14.3917,-19.6877 -8.413,-30.1384 0.2827,-0.4999 0.662,-0.9033 0.9792,-1.3688 z"
-                                        id="path4218"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 2462.4764,1970.4345 c -0.5344,-0.1758 -1.0758,-0.2654 -1.6033,-0.4896 -11.0196,-4.6719 -16.1053,-17.7155 -11.3541,-29.1385 4.7478,-11.4196 17.5294,-16.8914 28.549,-12.2195 0.5275,0.2241 0.9723,0.5517 1.4688,0.8137 z"
-                                        id="path4220"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        fill="#000000"
-                                        d="m 2535.7072,1913.5677 c 34.2759,0 62.0628,27.7869 62.0628,62.0629 0,34.2759 -27.7869,62.0629 -62.0628,62.0629 -34.276,0 -62.0629,-27.787 -62.0629,-62.0629 0,-34.276 27.7869,-62.0629 62.0629,-62.0629 z"
-                                        id="path4222"
-                                        className="table circle-table"/>
-                                </a>
-                                <a
-                                    href="/#"
-                                    onClick={(e) => {
-                                        tableClicked(e, zoomToElement);
-                                    }} id="g17099">
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 3553.9385,1914.6917 -38.5169,-22.2357 c 0.2413,-0.5138 0.3999,-1.0448 0.6861,-1.5413 6.0305,-10.4472 19.6084,-13.8952 30.3281,-7.7061 10.7196,6.189 14.5227,19.6705 8.4923,30.1177 -0.2897,0.4965 -0.6689,0.9 -0.9896,1.3654 z"
-                                        id="path4224"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 3584.0562,1999.3765 c -4.7926,11.4127 -17.6913,16.8811 -28.8109,12.2126 -0.531,-0.2241 -0.9792,-0.5516 -1.4826,-0.8102 l 17.219,-41.0098 c 0.5378,0.1758 1.0861,0.2689 1.6136,0.4896 11.123,4.6685 16.2501,17.7052 11.4609,29.1178 z"
-                                        id="path4226"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 3444.7561,2015.2095 38.1721,22.253 c -0.2413,0.5103 -0.4,1.0447 -0.6827,1.5412 -5.9753,10.4541 -19.4326,13.9055 -30.0557,7.713 -10.6231,-6.1925 -14.3917,-19.6877 -8.4129,-30.1384 0.2827,-0.5 0.662,-0.9034 0.9792,-1.3688 z"
-                                        id="path4228"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        stroke="#000000"
-                                        strokeWidth="3.44794px"
-                                        strokeLinecap="butt"
-                                        strokeLinejoin="miter"
-                                        fill="#000000"
-                                        d="m 3424.4512,1960.0907 c -0.5345,-0.1758 -1.0758,-0.2655 -1.6033,-0.4896 -11.0196,-4.6719 -16.1053,-17.7155 -11.3541,-29.1385 4.7478,-11.4196 17.5293,-16.8915 28.549,-12.2195 0.5275,0.2241 0.9723,0.5517 1.4688,0.8137 z"
-                                        id="path4230"/>
-                                    <path
-                                        fillRule="evenodd"
-                                        fill="#000000"
-                                        d="m 3497.6819,1903.2239 c 34.276,0 62.0629,27.7869 62.0629,62.0629 0,34.2759 -27.7869,62.0629 -62.0629,62.0629 -34.2759,0 -62.0629,-27.787 -62.0629,-62.0629 0,-34.276 27.787,-62.0629 62.0629,-62.0629 z"
-                                        id="path4232"
-                                        className="table circle-table"/>
-                                </a>
-                                <a
-                                    href="/#"
-                                    onClick={(e) => {
-                                        tableClicked(e, zoomToElement);
                                     }} id="g16891">
                                     <path
                                         fillRule="evenodd"
@@ -2220,7 +1786,7 @@ const Tables = ({tableSelected, handleTableSelection, formStage}) => {
                                         id="path10074"/>
                                     <path
                                         className="wall"
-                                        d="m 2244.2322,1506.8918 h 1407.4316 v 588.9049 H 2363.2735 V 1679.1915 H 1956.2298 V 1504.8473 H 1023.1563 911.87069"
+                                        d="m 1386.5,1506.8918 h 1407.4316 v 0 H 2363.2735 V 1506.8918 H 1956.2298 V 1506.8918 H 1023.1563 911.87069"
                                         id="path10078"/>
                                     <path
                                         className="wall"

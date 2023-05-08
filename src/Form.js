@@ -62,39 +62,35 @@ const Form = ({tableSelected, formStage, handleStageSelected}) => {
         return (
             <div className="form-wrapper" style={{height: 250}}>
                 <div className="form">
-                    <h2>Reserve a Seat:</h2>
+                    <h2>Reserve a table</h2>
                     <form id="reservation-form">
                         <div id="email">
-                            <label>Email</label>
-                            <input required type="email" placeholder="For your verification code" value={email}
+                            <input required type="email" placeholder="Email for verification" value={email}
                                    onChange={(e) => {
                                        setEmail(e.target.value);
                                    }}/>
                         </div>
                         <div id="first-name">
-                            <label>First Name</label>
-                            <input required type="text" placeholder="Your first name" value={firstName}
+                            <input required type="text" placeholder="First name" value={firstName}
                                    onChange={(e) => {
                                        setFirstName(e.target.value);
                                    }}/>
                         </div>
                         <div id="last-name">
-                            <label>Last Name</label>
-                            <input required type="text" placeholder="Your last (family) name" value={lastName}
+                            <input required type="text" placeholder="Last (family) name" value={lastName}
                                    onChange={(e) => {
                                        setLastName(e.target.value);
                                    }}/>
                         </div>
                         <div id="wxid">
-                            <label>WeChat ID</label>
-                            <input required type="text" placeholder="Getting in touch" value={wxid} onChange={(e) => {
+                            <input required type="text" placeholder="Wechat ID to get in touch" value={wxid} onChange={(e) => {
                                 setWxid(e.target.value);
                             }}/>
                         </div>
                         <div id="form-submit">
                             <button className="submit-button" onClick={(e) => {
                                 handleFormSubmit(e);
-                            }}>Submit me!
+                            }}>Reserve table
                             </button>
                         </div>
                     </form>
@@ -105,10 +101,10 @@ const Form = ({tableSelected, formStage, handleStageSelected}) => {
         return (
             <div className="form-wrapper" style={{height: 250}}>
                 <div className="form">
-                    <h2>Verification Code:</h2>
+                    <h2>Email Verification</h2>
                     <form id="verification-form">
                         <div>
-                            <label>Enter your code:</label>
+                            <label>Enter verification code:</label>
                             <ReactCodeInput autoFocus={true} fieldWidth="15%" className="verification-code-input"
                                             onComplete={(val) => {
                                                 checkVerificationCode(val);

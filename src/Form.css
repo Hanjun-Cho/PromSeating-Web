@@ -1,10 +1,8 @@
 .form {
     width: min(640px, 90vw);
     background-color: whitesmoke;
-    padding: 20px 20px 0 10px;
     box-sizing: border-box;
     text-align: left;
-    height: 100%;
 }
 
 #reservation-form {
@@ -12,9 +10,16 @@
     grid-template-areas:
         "c c"
         "a b"
-        "d e";
-    place-items: center;
-    grid-gap: 0 30px;
+        "d d"
+        "e e";
+    grid-gap: 0 12px;
+}
+
+#reservation-form input {
+    border-width: 0 0 1px 0;
+    padding: 6px 0 6px 9px;
+    font-size: 12px;
+    background-color: rgb(234, 234, 234);
 }
 
 #verification-form {
@@ -24,18 +29,26 @@
 }
 
 .verification-code-input {
-    padding: 5px 0;
+    padding: 6px 0;
 }
 
 .form-wrapper {
     width: 100%;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-top: 1px solid gray;
 }
 
 #reservation-form > div {
+    width: calc(100% - 9px);
+    margin-top: 3px;
+}
+
+#reservation-form > #form-submit {
     width: 100%;
+    margin-top: 6px;
+    grid-area: e;
 }
 
 #first-name {
@@ -63,10 +76,21 @@ input {
 
 .submit-button {
     width: 100%;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border: none;
+    background-color: rgb(63, 63, 63);
+    color: white;
+    font-size: 11px;
 }
 
 h2 {
-    margin: 0 0 10px 0;
+    margin: 0 0 9px 0;
+    font-size: 18px;
+}
+
+p {
+    margin: 3px 0 0 0;
 }
 
 .highlight-error {

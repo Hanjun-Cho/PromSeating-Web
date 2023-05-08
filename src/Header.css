@@ -5,18 +5,20 @@
     width: max(500px, 50vw);
     display: flex;
     align-items: center;
-    justify-content: space-between;
     background-color: whitesmoke;
     grid-template-rows: 100%;
 }
 
 .header-wrapper {
     width: 100%;
-    display: grid;
-    place-items: center;
+    display: flex;
     border-bottom: 1px solid gray;
 }
 
-h1 {
-    margin: 5px 0;
+.header > div > h2 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 16px;
+    margin: 0;
 }
