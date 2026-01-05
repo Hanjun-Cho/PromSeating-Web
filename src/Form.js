@@ -13,6 +13,9 @@ const Form = ({tableSelected, formStage, handleStageSelected}) => {
     function handleFormSubmit(e) {
         e.preventDefault();
         let hasErrors = false;
+        if (tableSelected.length === 0) {
+            hasErrors = true;
+        }
         if (email.length === 0) {
             toast.error('Email is required')
             hasErrors = true;
